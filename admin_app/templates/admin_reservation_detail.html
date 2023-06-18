@@ -1,0 +1,8 @@
+{% extends 'admin_base.html' %}
+
+{% block content %}
+    <h1  style="text-align: center;margin-top: 30px;">Reservation details</h1>
+        <p  style="text-align: center; font-size: 18px;">Client name: {{ reservation.client_name }}</p>
+        <p  style="text-align: center; font-size: 18px; margin-top: 20px;">Table number: {{ reservation.table_number }}</p>
+        <p  style="text-align: center; font-size: 18px;">Time: {{ reservation.reservation_time }}</p>
+{% endblock %}

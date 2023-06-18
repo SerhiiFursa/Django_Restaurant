@@ -1,0 +1,58 @@
+{% extends 'admin_base.html' %}
+
+{% block content %}
+<style>
+    table {
+        border-collapse: collapse;
+    }
+
+    th, td {
+        border: 1px solid black;
+        padding: 20px;
+    }
+    .reservation-table {
+        margin-top: 50px;
+    }
+</style>
+
+    <form class="center" method="get" action="">
+        <label for="date">Select a date:</label>
+        <input type="date" id="date" name="date" value="{{ selected_date }}">
+        <button type="submit">Show</button>
+    </form>
+
+    <table class="reservation-table">
+        <thead>
+            <tr>
+                <th>Table number</th>
+                {% for time_slot in time_slots %}
+                    <th>{{ time_slot }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for table_index, table_row in reservation_list %}
+                <tr>
+                    <td>{{ table_index }}</td>
+                    {% for reservation in table_row %}
+                        {% if reservation %}
+                            <td>
+                                {{ reservation.client_name }}
+                                <br>
+                                {% if reservation.id %}
+                                    <a href="{% url 'admin_app:admin_reservation_detail' reservation.id %}">More</a>
+                                {% endif %}
+                                <br>
+                                {% if reservation.id and not reservation.confirmed_visit%}
+                                    <a href="{% url 'admin_app:admin_confirm_visit' reservation.id %}">Confirm</a>
+                                {% endif %}
+                            </td>
+                        {% else %}
+                            <td>---</td>
+                        {% endif %}
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,106 @@
+/* стили для шапки сайта */
+header {
+background-color: #333;
+color: white;
+padding: 20px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+h1 {
+margin: 0;
+}
+
+.subpages {
+margin: 0;
+}
+
+/* стили для кнопки "Зарезервировать столик" */
+.center {
+text-align: center;
+margin-top: 100px;
+}
+
+.button {
+background-color: #008CBA;
+border: none;
+color: white;
+padding: 20px 37px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 26px;
+cursor: pointer;
+margin-bottom: 60px;
+}
+
+
+label {
+display: block;
+margin-bottom: 10px;
+}
+
+
+button[type="submit"] {
+background-color: #4CAF50;
+border: none;
+color: white;
+padding: 20px 37px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+cursor: pointer;
+}
+
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+
+/* Стили для контактов ресторана */
+.contacts {
+  text-align: center;
+  margin-top: 50px;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 200px;
+}
+
+.form-group {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.form-group {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border-radius: 5px;
+  padding: 10px;
+  width: 300px;
+}
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"] {
+  text-align: center;
+  width: 300px;
+}
+.email1 {
+}
+body {
+  font-family: "Times New Roman", Times, serif;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.large {
+  font-size: 20px;
+}

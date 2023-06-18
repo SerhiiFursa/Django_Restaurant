@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="center">
+{% for sub_reservation in reservation.values %}
+  {% if sub_reservation.confirmed == 1 %}
+    <h1>Your reservation:</h1>
+    <br>
+    {% for reserv in reservation %}
+        <p style="font-size: 18px;">Name: {{ reserv.client_name }}</p>
+        <p style="font-size: 18px;">Email: {{ reserv.client_email }}</p>
+        <p style="font-size: 18px;">Phone: {{ reserv.client_phone }}</p>
+        <p style="font-size: 18px;">Table number: {{ reserv.table_number }}</p>
+        <p style="font-size: 18px;">Number of guests: {{ reserv.number_of_guests }}</p>
+        <p style="font-size: 18px;">Date: {{ reserv.reservation_date }}</p>
+        <p style="font-size: 18px;">Time: {{ reserv.reservation_time }}</p>
+
+        <br>
+        <a href="{% url 'users:reservation_delete' %}?client_email={{ reserv.client_email }}" class="button" style="font-size: 16px;">Delete a Reservation</a>
+        <br>
+        <br>
+        <br>
+    {% endfor %}
+  {% else %}
+    <h1>Reservation not confirmed!</h1>
+  {% endif %}
+{% endfor %}
+</div>
+{% endblock %}

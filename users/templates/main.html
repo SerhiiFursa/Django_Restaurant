@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <div class="center">
+        <a href="{% url 'users:contact_details' %}" class="button">Make a Reservation</a>
+        <form method="post" action="{% url 'users:check_reservation' %}">
+            {% csrf_token %}
+            <input type="email" id="client_email" name="client_email" required placeholder="Enter your email" style="height: 70px;">
+            <button type="submit" class="btn btn-success">Check Reservation</button>
+        </form>
+    </div>
+{% endblock %}
+

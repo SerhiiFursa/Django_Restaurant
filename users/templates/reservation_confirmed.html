@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+{% if reservation.confirmed %}
+    <h1 style="text-align: center; margin-top: 30px;">Booking confirmed</h1>
+    <p style="text-align: center; font-size: 22px; margin-top: 20px;">Table number: {{ reservation.table_number }}</p>
+    <p style="text-align: center; font-size: 22px;">Date: {{ reservation.reservation_date }}</p>
+    <p style="text-align: center; font-size: 22px;">Time: {{ reservation.reservation_time }}</p>
+{% else %}
+    <h1>Booking confirmation error</h1>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1 style="text-align: center;">Contact Information </h1>
+  <form method="post" action="{% url 'users:contact_details' %}">
+  {% csrf_token %}
+
+  <div class="form-group">
+    <label for="client_name">Name:</label>
+    <input type="text" class="form-control" id="client_name" name="client_name" placeholder="Enter your name" required>
+  </div>
+  <div class="form-group">
+    <label for="client_email">E-mail:</label>
+    <input type="email" class="form-control" id="client_email" name="client_email" placeholder="Enter your e-mail" required>
+  </div>
+  <div class="form-group">
+    <label for="client_phone">Phone:</label>
+    <input type="tel" class="form-control" id="client_phone" name="client_phone" placeholder="Enter your телефон" required>
+  </div>
+  <div class="form-group">
+    <label for="number_of_guests">Number of guests:</label>
+    <input type="number" class="form-control" id="number_of_guests" name="number_of_guests" placeholder="Enter Введите number of guests" required>
+  </div>
+  <div class="form-group">
+      <label for="reservation_date">Reservation date:</label>
+      <select name="reservation_date" id="reservation_date">
+        {% for date in reservation_date %}
+          <option value="{{ date }}">{{ date }}</option>
+        {% endfor %}
+      </select>
+  </div>
+
+  <div style="display: flex; justify-content: center;">
+    <button type="submit">Next</button>
+  </div>
+  </form>
+
+{% endblock %}
